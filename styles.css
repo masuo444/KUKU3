@@ -1,0 +1,38 @@
+:root{
+  --bg:#f7f3ec;--paper:#fffaf3;--ink:#241f1a;--muted:#6e665c;--line:#d9cfbf;
+  --green:#315a46;--gold:#9f7b3b;--violet:#6c5aa7;--accent:#8c3b2e;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Hiragino Sans","Noto Sans JP",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.8}
+.hero{padding:72px 24px 48px;background:linear-gradient(180deg,#efe7d7 0%,#f7f3ec 100%);border-bottom:1px solid var(--line)}
+.wrap{max-width:1120px;margin:0 auto}
+.kicker{letter-spacing:.14em;color:var(--gold);font-weight:700;font-size:13px}
+h1{font-size:42px;line-height:1.25;margin:10px 0 16px}
+.lead{font-size:19px;max-width:820px;color:#40382f}
+nav{position:sticky;top:0;z-index:10;background:rgba(247,243,236,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:18px;overflow:auto;padding:12px 24px;white-space:nowrap}
+nav a{color:var(--muted);text-decoration:none;font-size:14px}
+main{padding:34px 24px 80px}
+section{margin:0 0 42px}
+h2{font-size:28px;margin:0 0 14px;border-left:5px solid var(--green);padding-left:14px}
+h3{font-size:20px;margin:24px 0 10px}
+p{margin:0 0 14px}
+.grid{display:grid;gap:16px}
+.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:18px 20px;box-shadow:0 1px 0 rgba(0,0,0,.03)}
+.badge{display:inline-block;padding:3px 10px;border-radius:999px;background:#ece4d7;color:#4f463d;font-size:12px;font-weight:700;margin-bottom:8px}
+.quote{font-size:22px;line-height:1.7;padding:22px;border-left:4px solid var(--gold);background:#f2eadc;border-radius:0 16px 16px 0}
+table{width:100%;border-collapse:collapse;background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+th,td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+th{background:#ece4d7;font-weight:700}
+tr:last-child td{border-bottom:none}
+ul{padding-left:20px;margin:8px 0 0}
+.map{width:100%;display:block;border-radius:18px;border:1px solid var(--line)}
+.small{font-size:14px;color:var(--muted)}
+.timeline{display:grid;grid-template-columns:120px 1fr;gap:12px}
+.timeline .year{font-weight:700;color:var(--accent)}
+.pill{display:inline-block;background:#e8efe9;color:var(--green);padding:3px 10px;border-radius:999px;font-size:13px;font-weight:700;margin-right:6px}
+.footer{padding-top:10px;color:var(--muted);font-size:14px}
+@media(max-width:800px){h1{font-size:32px}.grid.two,.grid.three{grid-template-columns:1fr}.timeline{grid-template-columns:1fr}}

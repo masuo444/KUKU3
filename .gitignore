@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# 戦略・設計資料（非公開）
+business.html
+KUKU_事業設計書_1.0.md
+KUKU_公式サイト設計書_1.0.md
+KUKU_公式サイト_引き継ぎメモ_*.md
+
+# 制作用素材（非公開）
+キャラクターシート/
+サイトデザイン/
+
+# 作業中・未使用素材
+ChatGPT Image *.png
+忘れられた世界が、*.png
+assets/ChatGPT Image *.png
+assets/island-map.png
+枡守.png
