@@ -957,9 +957,10 @@ img{display:block;max-width:100%;}
 ===================================================== */
 .music-album-card{
   display:grid;
-  grid-template-columns:220px 1fr;
-  background:#16251c;
+  grid-template-columns:260px 1fr;
+  background:linear-gradient(120deg,#0c1e14 0%,#16251c 50%,#0f1e15 100%);
   overflow:hidden;
+  border-left:3px solid rgba(200,164,106,.55);
 }
 .music-album-art{
   display:block;
@@ -972,39 +973,41 @@ img{display:block;max-width:100%;}
   height:100%;
   object-fit:cover;
   display:block;
+  filter:brightness(.96);
 }
 .music-album-info{
-  padding:28px 32px;
+  padding:32px 36px;
   display:flex;
   flex-direction:column;
   justify-content:center;
   color:#f3ede3;
+  border-left:1px solid rgba(200,164,106,.12);
 }
 .music-album-eye{
   font-size:11px;
   font-weight:600;
-  letter-spacing:.34em;
+  letter-spacing:.38em;
   text-transform:uppercase;
-  color:rgba(200,164,106,.85);
-  margin-bottom:8px;
+  color:rgba(200,164,106,.9);
+  margin-bottom:10px;
 }
 .music-album-title{
-  font-size:26px;
+  font-size:28px;
   font-weight:700;
-  letter-spacing:.1em;
-  margin-bottom:5px;
+  letter-spacing:.08em;
+  margin-bottom:6px;
 }
 .music-album-sub{
   font-size:13px;
-  color:rgba(243,237,227,.48);
-  letter-spacing:.08em;
-  margin-bottom:22px;
+  color:rgba(243,237,227,.4);
+  letter-spacing:.1em;
+  margin-bottom:26px;
 }
 .music-platforms{
   display:flex;
   flex-wrap:wrap;
   gap:10px;
-  margin-bottom:14px;
+  margin-bottom:16px;
 }
 .mpb{
   display:inline-flex;
@@ -1016,28 +1019,34 @@ img{display:block;max-width:100%;}
   font-weight:600;
   letter-spacing:.05em;
   text-decoration:none;
-  color:#fff;
   transition:opacity .2s,transform .18s;
 }
-.mpb:hover{opacity:.88;transform:translateY(-1px);}
-.mpb--spotify{background:#1DB954;}
-.mpb--apple{background:#fc3c44;}
-.mpb--amazon{background:#00A8E0;}
-.mpb--youtube{background:#FF0000;}
-.mpb--pending{opacity:.38;cursor:default;pointer-events:none;}
+.mpb:hover{opacity:.82;transform:translateY(-1px);}
+.mpb--spotify{background:#1DB954;color:#fff;}
+.mpb--apple{background:#fc3c44;color:#fff;}
+.mpb--amazon{background:#00A8E0;color:#fff;}
+.mpb--youtube{background:#FF0000;color:#fff;}
+/* 待ちはゴーストボタン */
+.mpb--pending{
+  background:transparent !important;
+  border:1px solid rgba(243,237,227,.22);
+  color:rgba(243,237,227,.38);
+  cursor:default;
+  pointer-events:none;
+}
 .mpb svg{width:15px;height:15px;fill:currentColor;flex-shrink:0;}
 .music-platform-note{
   font-size:11.5px;
-  color:rgba(243,237,227,.32);
-  letter-spacing:.08em;
-  line-height:1.8;
+  color:rgba(243,237,227,.28);
+  letter-spacing:.07em;
+  line-height:1.9;
 }
 @media(max-width:860px){
-  .music-album-card{grid-template-columns:1fr;}
+  .music-album-card{grid-template-columns:1fr;border-left:none;border-top:3px solid rgba(200,164,106,.55);}
   .music-album-art{aspect-ratio:auto;max-height:220px;}
   .music-album-art img{height:220px;object-position:center 20%;}
-  .music-album-info{padding:20px 20px 24px;}
-  .music-album-title{font-size:21px;}
+  .music-album-info{padding:22px 22px 26px;border-left:none;}
+  .music-album-title{font-size:22px;}
 }
 
 /* =====================================================
