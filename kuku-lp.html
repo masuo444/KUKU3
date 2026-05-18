@@ -262,73 +262,6 @@ img{display:block;max-width:100%;}
 .hero-grad{
   display:none;
 }
-/* overlay */
-.hero-media-wrap{
-  position:relative;
-  line-height:0;
-}
-.hero-overlay{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
-    to right,
-    rgba(6,20,14,.85) 0%,
-    rgba(6,20,14,.58) 42%,
-    transparent 68%
-  );
-  display:flex;
-  align-items:flex-end;
-}
-.hero-overlay-inner{
-  padding-bottom:7%;
-  padding-top:5%;
-  line-height:normal;
-}
-.hero-copy-eye{
-  font-size:12px;
-  font-weight:600;
-  letter-spacing:.34em;
-  text-transform:uppercase;
-  color:rgba(200,164,106,.92);
-  margin-bottom:16px;
-}
-.hero-copy-h1{
-  font-size:50px;
-  font-weight:700;
-  line-height:1.52;
-  letter-spacing:.08em;
-  color:#fff;
-  margin-bottom:18px;
-}
-.hero-copy-sub{
-  font-size:15px;
-  line-height:2.1;
-  color:rgba(243,237,227,.76);
-  margin-bottom:30px;
-  max-width:400px;
-}
-.hero-copy-btns{
-  display:flex;
-  gap:13px;
-  align-items:center;
-}
-@media(max-width:860px){
-  .hero-overlay{
-    background:linear-gradient(
-      to top,
-      rgba(6,20,14,.92) 0%,
-      rgba(6,20,14,.62) 50%,
-      transparent 78%
-    );
-    align-items:flex-end;
-  }
-  .hero-overlay-inner{padding-bottom:6%;}
-  .hero-copy-h1{font-size:28px;}
-  .hero-copy-sub{display:none;}
-}
-@media(max-width:560px){
-  .hero-copy-h1{font-size:23px;}
-}
 /* (legacy hero-body not used) */
 .hero-body{display:none;}
 
@@ -1200,29 +1133,12 @@ img{display:block;max-width:100%;}
      HERO
 =================================================== -->
 <section class="hero">
-  <div class="hero-media-wrap">
-    <picture class="hero-media">
-      <source media="(max-width: 860px)" type="image/webp" srcset="assets/lp/hero-mobile.webp">
-      <source media="(max-width: 860px)" srcset="assets/lp/hero-mobile.jpg">
-      <source type="image/webp" srcset="assets/lp/hero-main.webp">
-      <img class="hero-img" src="assets/lp/hero-main.jpg" alt="世界樹の前に立つ登場人物たち" fetchpriority="high">
-    </picture>
-    <div class="hero-overlay">
-      <div class="hero-overlay-inner W">
-        <p class="hero-copy-eye">KUKU OFFICIAL</p>
-        <h1 class="hero-copy-h1">忘れられた世界が、<br>もう一度芽吹く。</h1>
-        <p class="hero-copy-sub">
-          木の神の血を引く六人の若者たち。<br>
-          世界樹に守られた島で、彼らはまだ知らない。<br>
-          平和な日常の外に、失われた真実が眠っていることを。
-        </p>
-        <div class="hero-copy-btns">
-          <a href="#characters" class="btn-lt">6人に会う</a>
-          <a href="#world" class="btn-out">世界をのぞく</a>
-        </div>
-      </div>
-    </div>
-  </div>
+  <picture class="hero-media">
+    <source media="(max-width: 860px)" type="image/webp" srcset="assets/lp/hero-mobile.webp">
+    <source media="(max-width: 860px)" srcset="assets/lp/hero-mobile.jpg">
+    <source type="image/webp" srcset="assets/lp/hero-main.webp">
+    <img class="hero-img" src="assets/lp/hero-main.jpg" alt="世界樹の前に立つ登場人物たち" fetchpriority="high">
+  </picture>
 </section>
 
 <!-- ===================================================
@@ -1311,27 +1227,27 @@ img{display:block;max-width:100%;}
     <div class="chars-grid">
       <article class="char">
         <picture><source type="image/webp" srcset="assets/characters/fuji.webp"><img src="assets/characters/fuji.png" alt="フジ" loading="lazy"></picture>
-        <div class="char-info"><p class="char-nm">フジ</p><p class="char-rl">樹木の里の若き継承者</p></div>
+        <div class="char-info"><p class="char-nm">フジ</p></div>
       </article>
       <article class="char">
         <picture><source type="image/webp" srcset="assets/characters/sakura.webp"><img src="assets/characters/sakura.png" alt="サクラ" loading="lazy"></picture>
-        <div class="char-info"><p class="char-nm">サクラ</p><p class="char-rl">白花の加護を持つ少女</p></div>
+        <div class="char-info"><p class="char-nm">サクラ</p></div>
       </article>
       <article class="char">
         <picture><source type="image/webp" srcset="assets/characters/sazanka.webp"><img src="assets/characters/sazanka.png" alt="サザンカ" loading="lazy"></picture>
-        <div class="char-info"><p class="char-nm">サザンカ</p><p class="char-rl">冬を越える力の使い手</p></div>
+        <div class="char-info"><p class="char-nm">サザンカ</p></div>
       </article>
       <article class="char">
         <picture><source type="image/webp" srcset="assets/characters/mizuki.webp"><img src="assets/characters/mizuki.png" alt="ミズキ" loading="lazy"></picture>
-        <div class="char-info"><p class="char-nm">ミズキ</p><p class="char-rl">精霊の声を聴く者</p></div>
+        <div class="char-info"><p class="char-nm">ミズキ</p></div>
       </article>
       <article class="char">
         <picture><source type="image/webp" srcset="assets/characters/rino.webp"><img src="assets/characters/rino.png" alt="リノ" loading="lazy"></picture>
-        <div class="char-info"><p class="char-nm">リノ</p><p class="char-rl">刀の里の血を引く剣士</p></div>
+        <div class="char-info"><p class="char-nm">リノ</p></div>
       </article>
       <article class="char">
         <picture><source type="image/webp" srcset="assets/characters/hinoki.webp"><img src="assets/characters/hinoki.png" alt="ヒノキ" loading="lazy"></picture>
-        <div class="char-info"><p class="char-nm">ヒノキ</p><p class="char-rl">森の知恵を受け継ぐ者</p></div>
+        <div class="char-info"><p class="char-nm">ヒノキ</p></div>
       </article>
     </div>
   </section>
