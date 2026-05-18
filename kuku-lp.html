@@ -1092,7 +1092,7 @@ img{display:block;max-width:100%;}
   .hd-nav{display:none;}
   .hd-in{
     height:76px;
-    justify-content:center;
+    justify-content:space-between;
   }
   .hd-logo{
     font-size:19px;
@@ -1156,6 +1156,20 @@ img{display:block;max-width:100%;}
   .about-inner .sh{font-size:24px;}
 }
 
+
+/* =====================================================
+   HAMBURGER MENU
+===================================================== */
+.hd-menu-btn{display:none;flex-direction:column;justify-content:center;gap:5.5px;background:none;border:none;cursor:pointer;padding:6px 4px;width:36px;height:36px;flex-shrink:0;}
+.hd-menu-btn span{display:block;width:22px;height:1.5px;background:var(--c-ink);border-radius:1px;transition:opacity .2s,transform .25s;}
+.hd-overlay{position:fixed;inset:0;background:var(--c-deep);z-index:500;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;}
+.hd-overlay.open{opacity:1;pointer-events:auto;}
+.hd-overlay-close{position:absolute;top:20px;right:16px;background:none;border:none;color:rgba(243,237,227,.7);font-size:30px;font-weight:300;cursor:pointer;padding:8px;line-height:1;}
+.hd-overlay-nav{display:flex;flex-direction:column;align-items:center;gap:36px;}
+.hd-overlay-nav a{font-size:20px;letter-spacing:.3em;color:rgba(243,237,227,.82);font-weight:500;transition:color .18s;}
+.hd-overlay-nav a:hover,.hd-overlay-nav a:active{color:#f3ede3;}
+@media(max-width:860px){.hd-menu-btn{display:flex;}}
+
 </style>
 </head>
 <body>
@@ -1176,8 +1190,21 @@ img{display:block;max-width:100%;}
       <a href="goods.html">グッズ</a>
 
     </nav>
+    <button class="hd-menu-btn" id="menuBtn" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
+<div class="hd-overlay" id="menuOverlay" aria-modal="true" role="dialog">
+  <button class="hd-overlay-close" id="menuClose" aria-label="メニューを閉じる">✕</button>
+  <nav class="hd-overlay-nav">
+    <a href="kuku-lp.html">TOP</a>
+    <a href="world.html">世界観</a>
+    <a href="characters.html">キャラクター</a>
+    <a href="works.html">作品</a>
+    <a href="goods.html">グッズ</a>
+  </nav>
+</div>
 
 <!-- ===================================================
      HERO
@@ -1629,5 +1656,16 @@ img{display:block;max-width:100%;}
 })();
 </script>
 
+<script>
+(function(){
+  var btn=document.getElementById('menuBtn');
+  var ov=document.getElementById('menuOverlay');
+  var cl=document.getElementById('menuClose');
+  if(!btn)return;
+  btn.addEventListener('click',function(){ov.classList.add('open');document.body.style.overflow='hidden';});
+  cl.addEventListener('click',function(){ov.classList.remove('open');document.body.style.overflow='';});
+  ov.addEventListener('click',function(e){if(e.target===ov){ov.classList.remove('open');document.body.style.overflow='';}});
+})();
+</script>
 </body>
 </html>
