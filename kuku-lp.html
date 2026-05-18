@@ -262,52 +262,75 @@ img{display:block;max-width:100%;}
 .hero-grad{
   display:none;
 }
-.hero-body{
-  padding-top:52px;
-  padding-bottom:76px;
-  display:grid;
-  grid-template-columns:1fr 480px;
-  gap:56px;
-  align-items:center;
+/* overlay */
+.hero-media-wrap{
+  position:relative;
+  line-height:0;
 }
-.hero-body-img{
-  overflow:hidden;
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to right,
+    rgba(6,20,14,.85) 0%,
+    rgba(6,20,14,.58) 42%,
+    transparent 68%
+  );
+  display:flex;
+  align-items:flex-end;
 }
-.hero-body-img img{
-  width:100%;
-  height:320px;
-  object-fit:cover;
-  object-position:center center;
-  display:block;
+.hero-overlay-inner{
+  padding-bottom:7%;
+  padding-top:5%;
+  line-height:normal;
 }
-.hero-eye{
-  font-size:13px;
+.hero-copy-eye{
+  font-size:12px;
   font-weight:600;
-  letter-spacing:.28em;
+  letter-spacing:.34em;
   text-transform:uppercase;
-  color:var(--c-gold);
-  margin-bottom:20px;
+  color:rgba(200,164,106,.92);
+  margin-bottom:16px;
 }
-.hero-h1{
-  font-size:52px;
-  font-weight:600;
-  line-height:1.36;
-  letter-spacing:.07em;
-  margin-bottom:24px;
-  color:var(--c-ink);
+.hero-copy-h1{
+  font-size:50px;
+  font-weight:700;
+  line-height:1.52;
+  letter-spacing:.08em;
+  color:#fff;
+  margin-bottom:18px;
 }
-.hero-txt{
-  font-size:17px;
-  line-height:2.18;
-  color:var(--c-muted);
-  max-width:308px;
-  margin-bottom:36px;
+.hero-copy-sub{
+  font-size:15px;
+  line-height:2.1;
+  color:rgba(243,237,227,.76);
+  margin-bottom:30px;
+  max-width:400px;
 }
-.hero-btns{
+.hero-copy-btns{
   display:flex;
   gap:13px;
   align-items:center;
 }
+@media(max-width:860px){
+  .hero-overlay{
+    background:linear-gradient(
+      to top,
+      rgba(6,20,14,.92) 0%,
+      rgba(6,20,14,.62) 50%,
+      transparent 78%
+    );
+    align-items:flex-end;
+  }
+  .hero-overlay-inner{padding-bottom:6%;}
+  .hero-copy-h1{font-size:28px;}
+  .hero-copy-sub{display:none;}
+}
+@media(max-width:560px){
+  .hero-copy-h1{font-size:23px;}
+}
+/* (legacy hero-body not used) */
+.hero-body{display:none;}
 
 /* =====================================================
    BUTTONS
@@ -1177,12 +1200,29 @@ img{display:block;max-width:100%;}
      HERO
 =================================================== -->
 <section class="hero">
-  <picture class="hero-media">
-    <source media="(max-width: 860px)" type="image/webp" srcset="assets/lp/hero-mobile.webp">
-    <source media="(max-width: 860px)" srcset="assets/lp/hero-mobile.jpg">
-    <source type="image/webp" srcset="assets/lp/hero-main.webp">
-    <img class="hero-img" src="assets/lp/hero-main.jpg" alt="世界樹の前に立つ登場人物たち" fetchpriority="high">
-  </picture>
+  <div class="hero-media-wrap">
+    <picture class="hero-media">
+      <source media="(max-width: 860px)" type="image/webp" srcset="assets/lp/hero-mobile.webp">
+      <source media="(max-width: 860px)" srcset="assets/lp/hero-mobile.jpg">
+      <source type="image/webp" srcset="assets/lp/hero-main.webp">
+      <img class="hero-img" src="assets/lp/hero-main.jpg" alt="世界樹の前に立つ登場人物たち" fetchpriority="high">
+    </picture>
+    <div class="hero-overlay">
+      <div class="hero-overlay-inner W">
+        <p class="hero-copy-eye">KUKU OFFICIAL</p>
+        <h1 class="hero-copy-h1">忘れられた世界が、<br>もう一度芽吹く。</h1>
+        <p class="hero-copy-sub">
+          木の神の血を引く六人の若者たち。<br>
+          世界樹に守られた島で、彼らはまだ知らない。<br>
+          平和な日常の外に、失われた真実が眠っていることを。
+        </p>
+        <div class="hero-copy-btns">
+          <a href="#characters" class="btn-lt">6人に会う</a>
+          <a href="#world" class="btn-out">世界をのぞく</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ===================================================
@@ -1271,27 +1311,27 @@ img{display:block;max-width:100%;}
     <div class="chars-grid">
       <article class="char">
         <picture><source type="image/webp" srcset="assets/characters/fuji.webp"><img src="assets/characters/fuji.png" alt="フジ" loading="lazy"></picture>
-        <div class="char-info"><p class="char-nm">フジ</p></div>
+        <div class="char-info"><p class="char-nm">フジ</p><p class="char-rl">樹木の里の若き継承者</p></div>
       </article>
       <article class="char">
         <picture><source type="image/webp" srcset="assets/characters/sakura.webp"><img src="assets/characters/sakura.png" alt="サクラ" loading="lazy"></picture>
-        <div class="char-info"><p class="char-nm">サクラ</p></div>
+        <div class="char-info"><p class="char-nm">サクラ</p><p class="char-rl">白花の加護を持つ少女</p></div>
       </article>
       <article class="char">
         <picture><source type="image/webp" srcset="assets/characters/sazanka.webp"><img src="assets/characters/sazanka.png" alt="サザンカ" loading="lazy"></picture>
-        <div class="char-info"><p class="char-nm">サザンカ</p></div>
+        <div class="char-info"><p class="char-nm">サザンカ</p><p class="char-rl">冬を越える力の使い手</p></div>
       </article>
       <article class="char">
         <picture><source type="image/webp" srcset="assets/characters/mizuki.webp"><img src="assets/characters/mizuki.png" alt="ミズキ" loading="lazy"></picture>
-        <div class="char-info"><p class="char-nm">ミズキ</p></div>
+        <div class="char-info"><p class="char-nm">ミズキ</p><p class="char-rl">精霊の声を聴く者</p></div>
       </article>
       <article class="char">
         <picture><source type="image/webp" srcset="assets/characters/rino.webp"><img src="assets/characters/rino.png" alt="リノ" loading="lazy"></picture>
-        <div class="char-info"><p class="char-nm">リノ</p></div>
+        <div class="char-info"><p class="char-nm">リノ</p><p class="char-rl">刀の里の血を引く剣士</p></div>
       </article>
       <article class="char">
         <picture><source type="image/webp" srcset="assets/characters/hinoki.webp"><img src="assets/characters/hinoki.png" alt="ヒノキ" loading="lazy"></picture>
-        <div class="char-info"><p class="char-nm">ヒノキ</p></div>
+        <div class="char-info"><p class="char-nm">ヒノキ</p><p class="char-rl">森の知恵を受け継ぐ者</p></div>
       </article>
     </div>
   </section>
@@ -1334,8 +1374,12 @@ img{display:block;max-width:100%;}
           <span style="letter-spacing:.14em;opacity:.5;">動画を読み込み中…</span>
         </div>
       </div>
-      <div style="text-align:center;margin-top:28px;">
-        <a href="https://www.youtube.com/@kuku-TreeVillage" target="_blank" rel="noopener" class="more">他の作品も見る →</a>
+      <div style="text-align:center;margin-top:32px;display:flex;flex-direction:column;align-items:center;gap:12px;">
+        <a href="https://www.youtube.com/@kuku-TreeVillage" target="_blank" rel="noopener" class="btn-solid" style="gap:10px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          YouTubeチャンネルをフォロー
+        </a>
+        <p style="font-size:12px;letter-spacing:.1em;color:var(--c-muted);opacity:.7;">新しいMV・作品情報を最速でお届け</p>
       </div>
     </div>
 
