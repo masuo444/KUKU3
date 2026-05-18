@@ -981,8 +981,9 @@ img{display:block;max-width:100%;}
 (function(){
   var u=encodeURIComponent(location.href),t=encodeURIComponent(document.title);
   document.getElementById("share-x").href="https://twitter.com/intent/tweet?url="+u+"&text="+t;
-  document.getElementById("share-fb").href="https://www.facebook.com/sharer/sharer.php?u="+u;
-  document.getElementById("share-line").href="https://social-plugins.line.me/lineit/share?url="+u;
+  document.getElementById("share-fb").href="https://www.facebook.com/sharer/sharer.php?u="+u+"&display=popup";
+  document.getElementById("share-line").href="https://line.me/R/msg/text/?"+encodeURIComponent(document.title+"
+"+location.href);
 })();
 </script>
 <script>
