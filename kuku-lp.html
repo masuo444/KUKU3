@@ -1117,37 +1117,37 @@ img{display:block;max-width:100%;}
     </div>
     <div class="chars-grid">
       <article class="char">
-        <img src="キャラクターシート/S__32071685.png" alt="フジ">
+        <img src="assets/characters/fuji.png" alt="フジ">
         <div class="char-info">
           <p class="char-nm">フジ</p>
         </div>
       </article>
       <article class="char">
-        <img src="キャラクターシート/S__32071683.png" alt="サクラ">
+        <img src="assets/characters/sakura.png" alt="サクラ">
         <div class="char-info">
           <p class="char-nm">サクラ</p>
         </div>
       </article>
       <article class="char">
-        <img src="キャラクターシート/S__32071692.png" alt="サザンカ">
+        <img src="assets/characters/sazanka.png" alt="サザンカ">
         <div class="char-info">
           <p class="char-nm">サザンカ</p>
         </div>
       </article>
       <article class="char">
-        <img src="キャラクターシート/S__32071687.png" alt="ミズキ">
+        <img src="assets/characters/mizuki.png" alt="ミズキ">
         <div class="char-info">
           <p class="char-nm">ミズキ</p>
         </div>
       </article>
       <article class="char">
-        <img src="キャラクターシート/S__32071686.png" alt="リノ">
+        <img src="assets/characters/rino.png" alt="リノ">
         <div class="char-info">
           <p class="char-nm">リノ</p>
         </div>
       </article>
       <article class="char">
-        <img src="キャラクターシート/S__32071684.png" alt="ヒノキ">
+        <img src="assets/characters/hinoki.png" alt="ヒノキ">
         <div class="char-info">
           <p class="char-nm">ヒノキ</p>
         </div>
@@ -1370,23 +1370,14 @@ img{display:block;max-width:100%;}
 })();
 </script>
 
-<!-- ===================================================
-     YouTube RSS → MV自動取得
-     チャンネルにMVが追加されると自動反映されます
-=================================================== -->
 <script>
 (function(){
-  var CHANNEL_ID = 'UCzSfzpWxRFtU_iEtwpo1cIw';
-  var RSS_URL    = 'https://www.youtube.com/feeds/videos.xml?channel_id=' + CHANNEL_ID;
-  var API_URL    = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(RSS_URL) + '&count=3';
-  var grid       = document.getElementById('yt-grid');
-
-  /* 既知の動画（APIが失敗したときのフォールバック・最新3本） */
-  var FALLBACK = [
-    { vid:'6-t6n-NONCk', title:'Spring of Scent🌸 | KUKU Original Anime MV' },
+  var VIDEOS = [
     { vid:'RBjvvYy-O2o', title:'【神作画】運命の刻 | UNMEI NO TOKI - KUKU (Official Anime MV)' },
-    { vid:'fi045Kboa5c', title:'【春の香り】｜KUKU (Original Anime MV)' }
+    { vid:'FKEr-py0XRg', title:'【MV】春の香り | KUKU Official MV' },
+    { vid:'gH1Lm2zNtGE', title:'Breathing in the darkness | KUKU' }
   ];
+  var grid = document.getElementById('yt-grid');
 
   function thumb(vid){
     return 'https://img.youtube.com/vi/' + vid + '/maxresdefault.jpg';
@@ -1398,41 +1389,14 @@ img{display:block;max-width:100%;}
       + '</div></div>';
   }
 
-  function isShort(item){
-    var t = (item.title||'').toLowerCase();
-    return t.indexOf('#shorts') !== -1 || t.indexOf('#short ') !== -1;
-  }
-
-  function renderVideos(items){
-    if(items.length === 1){
-      grid.classList.remove('works-row--grid');
-      grid.classList.add('works-row--single');
-    }
-    grid.innerHTML = items.map(function(item){
-      var vid   = item.vid   || (item.link||'').match(/[?&]v=([^&]+)/)?.[1] || '';
-      var title = item.title || '';
-      var date  = item.pubDate ? item.pubDate.slice(0,10) : '';
-      return '<a class="work" href="https://www.youtube.com/watch?v=' + vid + '" target="_blank" rel="noopener">'
-        + '<img src="' + thumb(vid) + '" alt="' + title.replace(/"/g,'') + '"'
-        + ' onerror="(function(e){e.onerror=null;e.src=\'https://img.youtube.com/vi/' + vid + '/hqdefault.jpg\';})(this)">'
-        + playBtn()
-        + '<div class="work-meta">'
-        + '<p class="work-meta-title">' + title + '</p>'
-        + (date ? '<p style="font-size:10.5px;opacity:.55;margin-top:4px;letter-spacing:.06em;">' + date + '</p>' : '')
-        + '</div>'
-        + '</a>';
-    }).join('');
-  }
-
-  fetch(API_URL)
-    .then(function(r){ return r.json(); })
-    .then(function(data){
-      var items = (data.items||[]).filter(function(i){ return !isShort(i); });
-      renderVideos(items.length ? items : FALLBACK);
-    })
-    .catch(function(){
-      renderVideos(FALLBACK);
-    });
+  grid.innerHTML = VIDEOS.map(function(item){
+    return '<a class="work" href="https://www.youtube.com/watch?v=' + item.vid + '" target="_blank" rel="noopener">'
+      + '<img src="' + thumb(item.vid) + '" alt="' + item.title.replace(/"/g,'') + '"'
+      + ' onerror="(function(e){e.onerror=null;e.src=\'https://img.youtube.com/vi/' + item.vid + '/hqdefault.jpg\';})(this)">'
+      + playBtn()
+      + '<div class="work-meta"><p class="work-meta-title">' + item.title + '</p></div>'
+      + '</a>';
+  }).join('');
 })();
 </script>
 
