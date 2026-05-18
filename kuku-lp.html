@@ -1169,6 +1169,24 @@ img{display:block;max-width:100%;}
 
 
 /* =====================================================
+   SCROLL FADE-IN
+===================================================== */
+.fade-up{
+  opacity:0;
+  transform:translateY(22px);
+  transition:opacity .6s ease-out, transform .6s ease-out;
+}
+.fade-up.is-visible{
+  opacity:1;
+  transform:translateY(0);
+}
+.fade-up.delay-1{ transition-delay:.08s; }
+.fade-up.delay-2{ transition-delay:.16s; }
+.fade-up.delay-3{ transition-delay:.24s; }
+.fade-up.delay-4{ transition-delay:.32s; }
+.fade-up.delay-5{ transition-delay:.40s; }
+
+/* =====================================================
    HAMBURGER MENU
 ===================================================== */
 .hd-menu-btn{display:none;flex-direction:column;justify-content:center;gap:5.5px;background:none;border:none;cursor:pointer;padding:6px 4px;width:36px;height:36px;flex-shrink:0;}
@@ -1236,7 +1254,7 @@ img{display:block;max-width:100%;}
 
   <!-- ABOUT KUKU -->
   <section class="sec-visual">
-    <div class="sec-visual-img-wrap">
+    <div class="sec-visual-img-wrap fade-up">
       <picture>
         <source type="image/webp" srcset="assets/lp/world-view.webp">
         <img class="sec-visual-img" src="assets/lp/world-view.png" alt="樹木の里を見渡す世界" loading="lazy">
@@ -1257,7 +1275,7 @@ img{display:block;max-width:100%;}
 
   <!-- WORLD -->
   <section id="world" class="sec-world W divider">
-    <div class="world-header">
+    <div class="world-header fade-up">
       <div class="world-header-txt">
         <p class="eye">WORLD</p>
         <h2 class="sh">世界について</h2>
@@ -1267,7 +1285,7 @@ img{display:block;max-width:100%;}
         </p>
       </div>
     </div>
-    <div class="world-slider-wrap">
+    <div class="world-slider-wrap fade-up">
       <div class="world-slider-track" id="worldTrack">
         <article class="world-slide">
           <picture><source type="image/webp" srcset="assets/lp/tree-village.webp"><img src="assets/lp/tree-village.png" alt="樹木の里" loading="lazy"></picture>
@@ -1305,7 +1323,7 @@ img{display:block;max-width:100%;}
 
   <!-- CHARACTERS -->
   <section id="characters" class="sec-chars W">
-    <div class="sec-top">
+    <div class="sec-top fade-up">
       <div>
         <p class="eye">CHARACTERS</p>
         <h2 class="sh">キャラクター</h2>
@@ -1313,27 +1331,27 @@ img{display:block;max-width:100%;}
       <a href="characters.html" class="more">すべてのキャラクターを見る →</a>
     </div>
     <div class="chars-grid">
-      <article class="char">
+      <article class="char fade-up delay-1">
         <picture><source type="image/webp" srcset="assets/characters/fuji.webp"><img src="assets/characters/fuji.png" alt="フジ" loading="lazy"></picture>
         <div class="char-info"><p class="char-nm">フジ</p></div>
       </article>
-      <article class="char">
+      <article class="char fade-up delay-2">
         <picture><source type="image/webp" srcset="assets/characters/sakura.webp"><img src="assets/characters/sakura.png" alt="サクラ" loading="lazy"></picture>
         <div class="char-info"><p class="char-nm">サクラ</p></div>
       </article>
-      <article class="char">
+      <article class="char fade-up delay-3">
         <picture><source type="image/webp" srcset="assets/characters/sazanka.webp"><img src="assets/characters/sazanka.png" alt="サザンカ" loading="lazy"></picture>
         <div class="char-info"><p class="char-nm">サザンカ</p></div>
       </article>
-      <article class="char">
+      <article class="char fade-up delay-1">
         <picture><source type="image/webp" srcset="assets/characters/mizuki.webp"><img src="assets/characters/mizuki.png" alt="ミズキ" loading="lazy"></picture>
         <div class="char-info"><p class="char-nm">ミズキ</p></div>
       </article>
-      <article class="char">
+      <article class="char fade-up delay-2">
         <picture><source type="image/webp" srcset="assets/characters/rino.webp"><img src="assets/characters/rino.png" alt="リノ" loading="lazy"></picture>
         <div class="char-info"><p class="char-nm">リノ</p></div>
       </article>
-      <article class="char">
+      <article class="char fade-up delay-3">
         <picture><source type="image/webp" srcset="assets/characters/hinoki.webp"><img src="assets/characters/hinoki.png" alt="ヒノキ" loading="lazy"></picture>
         <div class="char-info"><p class="char-nm">ヒノキ</p></div>
       </article>
@@ -1343,7 +1361,7 @@ img{display:block;max-width:100%;}
 
   <!-- WORKS -->
   <section id="works" class="sec-works W divider">
-    <div class="sec-top">
+    <div class="sec-top fade-up">
       <div>
         <p class="eye">WORKS</p>
         <h2 class="sh">作品</h2>
@@ -1352,7 +1370,7 @@ img{display:block;max-width:100%;}
     </div>
 
     <!-- ── GAME ── -->
-    <div class="works-genre">
+    <div class="works-genre fade-up">
       <div class="genre-label"><span>GAME</span></div>
       <div class="works-row--games">
         <a class="work" href="https://www.roblox.com/ja/games/126119840264627/KODAMA-Village" target="_blank" rel="noopener">
@@ -1371,7 +1389,7 @@ img{display:block;max-width:100%;}
     </div>
 
     <!-- ── MUSIC VIDEO（YouTube自動取得）── -->
-    <div class="works-genre">
+    <div class="works-genre fade-up">
       <div class="genre-label"><span>MUSIC VIDEO</span></div>
       <div class="works-row--grid" id="yt-grid">
         <div class="works-placeholder">
@@ -1388,7 +1406,7 @@ img{display:block;max-width:100%;}
     </div>
 
     <!-- ── MUSIC ── -->
-    <div class="works-genre">
+    <div class="works-genre fade-up">
       <div class="genre-label"><span>MUSIC</span></div>
       <div class="music-album-card">
         <picture class="music-album-art">
@@ -1427,7 +1445,7 @@ img{display:block;max-width:100%;}
 
   <!-- GOODS -->
   <section id="goods" class="sec-goods W divider">
-    <div class="sec-top">
+    <div class="sec-top fade-up">
       <div>
         <p class="eye">GOODS</p>
         <h2 class="sh">グッズ</h2>
@@ -1435,15 +1453,15 @@ img{display:block;max-width:100%;}
       <a href="goods.html" class="more">すべてのグッズを見る →</a>
     </div>
     <div class="goods-grid">
-      <a class="goods-card" href="goods.html">
+      <a class="goods-card fade-up delay-1" href="goods.html">
         <div class="goods-img"><picture><source type="image/webp" srcset="assets/lp/masu-sacred.webp"><img src="assets/lp/masu-sacred.png" alt="枡" loading="lazy"></picture></div>
         <div class="goods-copy"><p class="eye">ITEM 01</p><h3>枡</h3><p>祈り、守り、つなぐことの象徴。物語の中で受け継がれてきた、KUKUを象徴する品。</p><span class="goods-link">詳しく見る →</span></div>
       </a>
-      <a class="goods-card" href="goods.html">
+      <a class="goods-card fade-up delay-2" href="goods.html">
         <div class="goods-img"><picture><source type="image/webp" srcset="assets/lp/silva.webp"><img src="assets/lp/silva.png" alt="SILVA カードゲーム" loading="lazy"></picture></div>
         <div class="goods-copy"><p class="eye">ITEM 02</p><h3>SILVA カードゲーム</h3><p>KUKUの世界から生まれたカードゲーム。手に取って遊べる、もうひとつの物語。</p><span class="goods-link">詳しく見る →</span></div>
       </a>
-      <a class="goods-card" href="goods.html">
+      <a class="goods-card fade-up delay-3" href="goods.html">
         <div class="goods-img"><picture><source type="image/webp" srcset="assets/lp/masumamori.webp"><img src="assets/lp/masumamori.png" alt="枡守" loading="lazy"></picture></div>
         <div class="goods-copy"><p class="eye">ITEM 03</p><h3>枡守（ますまもり）</h3><p>首からさげて身につける、KUKUの枡。大切な人への想いを、いつもそばに。</p><span class="goods-link">詳しく見る →</span></div>
       </a>
@@ -1453,7 +1471,7 @@ img{display:block;max-width:100%;}
   <!-- COMING SOON -->
   <section class="sec-coming W divider">
     <!-- COMING SOON header -->
-    <div class="coming-hd">
+    <div class="coming-hd fade-up">
       <span class="coming-hd-label">COMING SOON</span>
       <span class="coming-hd-sub">現在制作中のコンテンツです。今後の展開にご期待ください。</span>
     </div>
@@ -1656,6 +1674,22 @@ img{display:block;max-width:100%;}
   });
 
   startAuto();
+})();
+</script>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.fade-up');
+  if(!els.length) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('is-visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  els.forEach(function(el){ io.observe(el); });
 })();
 </script>
 
