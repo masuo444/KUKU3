@@ -869,32 +869,28 @@ img{display:block;max-width:100%;}
 /* COMING SOON header row */
 .coming-hd{
   display:flex;
-  align-items:center;
-  gap:14px;
+  flex-direction:column;
+  gap:8px;
   margin-top:32px;
-  margin-bottom:16px;
-}
-.coming-hd::before{
-  content:'';
-  display:block;
-  width:36px;
-  height:1px;
-  background:var(--c-gold);
-  flex-shrink:0;
+  margin-bottom:24px;
+  padding:28px 28px 24px;
+  background:var(--c-deep);
+  border-radius:2px;
 }
 .coming-hd-label{
-  font-size:13px;
-  font-weight:600;
-  letter-spacing:.24em;
+  font-size:16px;
+  font-weight:700;
+  letter-spacing:.3em;
   text-transform:uppercase;
   color:var(--c-gold);
   white-space:nowrap;
 }
 .coming-hd-sub{
-  font-size:12px;
-  letter-spacing:.1em;
-  color:var(--c-muted);
-  margin-left:4px;
+  font-size:15px;
+  font-weight:500;
+  letter-spacing:.06em;
+  color:rgba(243,237,227,.75);
+  margin-left:0;
 }
 
 /* COMING SOON cards */
@@ -966,21 +962,22 @@ img{display:block;max-width:100%;}
 .coming-text{}
 .coming-en{
   display:block;
-  font-size:14px;
+  font-size:16px;
   font-weight:700;
-  letter-spacing:.22em;
+  letter-spacing:.18em;
   color:var(--c-ink);
-  margin-bottom:2px;
+  margin-bottom:4px;
 }
 .coming-jp{
-  font-size:13px;
-  color:var(--c-muted);
+  font-size:15px;
+  font-weight:600;
+  color:var(--c-ink);
   letter-spacing:.08em;
-  margin-bottom:7px;
+  margin-bottom:8px;
 }
 .coming-desc{
-  font-size:13.5px;
-  line-height:1.75;
+  font-size:14px;
+  line-height:1.85;
   color:var(--c-muted);
   letter-spacing:.04em;
 }
@@ -1351,9 +1348,9 @@ img{display:block;max-width:100%;}
     <div class="works-genre">
       <div class="genre-label"><span>MUSIC</span></div>
       <div class="works-row--single">
-        <div class="work" style="aspect-ratio:16/5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;cursor:default;">
-          <p style="font-size:13px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#9e7844;">COMING SOON</p>
-          <p style="font-size:26px;font-weight:600;letter-spacing:.18em;color:#f3ede3;">2026年夏、公開</p>
+        <div class="work" style="aspect-ratio:16/5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;cursor:default;">
+          <p style="font-size:13px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:#9e7844;">COMING SOON</p>
+          <p style="font-size:15px;font-weight:400;letter-spacing:.12em;color:rgba(243,237,227,.55);">準備中です。お楽しみに。</p>
         </div>
       </div>
     </div>
@@ -1390,7 +1387,7 @@ img{display:block;max-width:100%;}
     <!-- COMING SOON header -->
     <div class="coming-hd">
       <span class="coming-hd-label">COMING SOON</span>
-      <span class="coming-hd-sub">今後の展開にもご期待ください。</span>
+      <span class="coming-hd-sub">現在制作中のコンテンツです。今後の展開にご期待ください。</span>
     </div>
 
     <div class="coming">
