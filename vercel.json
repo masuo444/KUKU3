@@ -1,5 +1,6 @@
 {
   "rewrites": [
-    { "source": "/", "destination": "/kuku-lp.html" }
+    { "source": "/", "destination": "/kuku-lp.html" },
+    { "source": "/en", "destination": "/en.html" }
   ]
 }
