@@ -1,6 +1,14 @@
 {
   "rewrites": [
     { "source": "/", "destination": "/kuku-lp.html" },
-    { "source": "/en", "destination": "/en.html" }
+    { "source": "/en", "destination": "/en.html" },
+    { "source": "/world", "destination": "/world.html" },
+    { "source": "/characters", "destination": "/characters.html" },
+    { "source": "/works", "destination": "/works.html" },
+    { "source": "/goods", "destination": "/goods.html" },
+    { "source": "/en/world", "destination": "/world-en.html" },
+    { "source": "/en/characters", "destination": "/characters-en.html" },
+    { "source": "/en/works", "destination": "/works-en.html" },
+    { "source": "/en/goods", "destination": "/goods-en.html" }
   ]
 }
